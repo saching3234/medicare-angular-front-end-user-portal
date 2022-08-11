@@ -1,0 +1,27 @@
+<div class="container my-5">
+
+    <div *ngFor="let order of orders" class="card border-primary my-2" style="width: auto;">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <img class="card-img" style="height: auto; width:100% ;"  src="http://localhost:4201/{{order.img_name}}" alt="Cart Image">
+            </div>
+            <div class="col-md-9">
+                <div class="card-body mx-3">
+                    <h5 class="card-title">{{order.pname}}</h5>
+                    <hr>
+                    <p class="card-text">{{order.pdescription}}</p>
+                    <hr>
+                    <p class="card-text">Quantity :{{order.quantity}} * price per quantity : {{order.price_per_unit}}={{order.quantity*order.price_per_unit}} </p>
+                    <hr>
+                    <p class="card-text">Brand Name : {{order.brand}}</p>
+                    <hr>
+                    <p class="card-text">Order Date and Time: {{order.orderDate | date:'medium'}} <br>Delivery Status :{{order.deliveryStatus}}
+                      <br>Delivery Status Updated Date and Time: {{order.deliveryDate | date:'medium'}} 
+                    </p>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

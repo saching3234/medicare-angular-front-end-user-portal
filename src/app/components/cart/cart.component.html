@@ -1,0 +1,49 @@
+<div class="container my-5" >
+ <div  *ngIf="carts">
+<div  *ngIf="carts.length==0" class="text-center">
+    <img src="http://localhost:4201/images/emptycart.png" alt="Fail to load image">
+</div>
+</div>
+
+<div  *ngIf="carts">
+<div *ngFor="let cart of carts" class="card border-success" style="width: auto;">
+    <div class="row no-gutters">
+        <div class="col-sm-3">
+            <img class="card-img" style="height: auto; width:100% ;"  src="http://localhost:4201/{{cart.img_name}}" alt="Cart Image">
+        </div>
+        <div class="col-sm-9 ">
+            <div class="card-body mx-3">
+                <h5 class="card-title">{{cart.pname}}</h5>
+                <hr>
+                <p class="card-text">{{cart.pdescription}}</p>
+                <hr>
+                <p class="card-text">Brand Name: {{cart.brand}}</p>
+                <hr>
+                <p class="card-text">Quantity :{{cart.quantity}} * price per quantity : {{cart.price_per_unit}}={{cart.quantity*cart.price_per_unit}} </p>
+                <hr>
+                <button class="btn btn-warning" (click)="removeFromCart(cart.cartId)">Remove From Cart </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div *ngIf="carts">
+<div *ngIf="carts.length>0" class="card border-primary " style="width: auto;">
+    <div class="row no-gutters">
+        
+        <div class="col-sm-9">
+            <div class="card-body text-center">
+                <h5 class="card-title">Total Price to paid : {{total_price}} </h5>
+                
+                <button class="btn btn-primary"  (click)="MakePaymentAndSaveOrders()">Make A Payment and Checkout</button>
+
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</div>

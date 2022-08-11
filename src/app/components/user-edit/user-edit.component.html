@@ -1,0 +1,78 @@
+<div class="container my-5">
+    <div class="card border-info mb-3" style="max-width: 30rem;">
+      <div class="card-header"><h3>User Details Edit Form</h3></div>
+      <div class="card-body"  *ngIf="user" >
+        <form #userReg="ngForm" (ngSubmit)="submit(userReg)">
+            <div class="form-group">
+                <label for="uname">Enter Full Name:</label>
+                <input type="text"   #name="ngModel" required name="name" class="form-control" [(ngModel)]="user.name">
+                <div *ngIf="name.touched&&name.invalid" class="alert alert-danger">
+                  <p *ngIf="name.errors?.['required']">user name required</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="age">Enter Age:</label>
+                <input type="number" #age="ngModel" required    name="age"  class="form-control" ngModel="{{user.age}}">
+                <div *ngIf="age.touched&&age.invalid" class="alert alert-danger">
+                  <p *ngIf="age.errors?.['required']">age required</p>
+                  <p *ngIf="age.errors?.['pattern']">enter valid age</p>
+                </div>
+              </div> 
+
+          <div class="form-group">
+            <label for="email">Enter Email Id</label>
+            <input type="email"  #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required
+              name="email" class="form-control" ngModel="{{user.email}}">
+            <div *ngIf="email.touched&&email.invalid" class="alert alert-danger">
+              <p *ngIf="email.errors?.['required']">Email Id required</p>
+              <p *ngIf="email.errors?.['pattern']">Enter Valid Email</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Enter gender</label>
+            <input type="text" #gender="ngModel" required name="gender" class="form-control" ngModel="{{user.gender}}">
+            <div *ngIf="gender.touched&&gender.invalid" class="alert alert-danger">
+              <p *ngIf="gender.errors?.['required']">Enter Valid Gender</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Enter Phone No:</label>
+            <input type="text" #phone="ngModel" required  pattern="[7-9]{1}[0-9]{9}"  name="phone" class="form-control" ngModel="{{user.phone}}">
+            <div *ngIf="phone.touched&&phone.invalid" class="alert alert-danger">
+              <p *ngIf="phone.errors?.['required']">Phone no required</p>
+              <p *ngIf="phone.errors?.['pattern']">Enter 10 digit Mobile No. Starting with either 7 or 8 or 9 or</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Enter address</label>
+            <input type="text" #address="ngModel" required name="address" class="form-control" ngModel="{{user.address}}">
+            <div *ngIf="address.touched&&address.invalid" class="alert alert-danger">
+              <p *ngIf="address.errors?.['required']">Enter Valid address</p>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="pincode">Enter Pin Code:</label>
+            <input type="text" #pincode="ngModel" required  pattern="[0-9]{6}"  name="pincode" class="form-control" ngModel="{{user.pincode}}">
+            <div *ngIf="pincode.touched&&pincode.invalid" class="alert alert-danger">
+              <p *ngIf="pincode.errors?.['required']">pincode required</p>
+              <p *ngIf="pincode.errors?.['pattern']">Enter 6 digit valid pincode</p>
+            </div>
+          </div>
+           
+
+
+  
+          <button [disabled]="userReg.invalid"  class="btn btn-primary my-3" type="submit">Update</button>
+          <button class="btn btn-danger mx-3" (click)="cancel()" type="button">Cancel </button>
+          <br>
+          
+        </form>
+        
+      </div>
+    </div>
+  </div>

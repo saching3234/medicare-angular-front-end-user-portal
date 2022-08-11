@@ -1,0 +1,17 @@
+<br><br>
+<div class="container-fluid row">   
+    <div class="col-sm-3">
+    <h4>Available Categories</h4>
+        <ul class="list-group">
+        <li class="list-group-item" *ngFor="let category of categories">
+           <app-category [category]="category"></app-category>
+        </li>
+     </ul>
+</div>
+
+<div class="col-sm-9  ">
+    <br>
+    <router-outlet></router-outlet>
+    
+</div>
+</div>

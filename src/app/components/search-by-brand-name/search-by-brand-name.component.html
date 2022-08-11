@@ -1,0 +1,27 @@
+<div class="container my-3">
+<div class="row">
+    <div class="col col-md-6" *ngFor="let product of products ">
+    <div class="card" style="width: 100%;">
+        <img class="card-img-top" style="height: 16rem;" src="http://localhost:4201/{{product.img_name}}"product.img_name alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{product.pname}}</h5>
+          <p class="card-text">{{product.pdescription}}</p>
+          <hr>
+          <p class="card-text">Brand Name : {{product.brand}}</p>
+          <hr>
+          <p>Price : {{product.price_per_unit}}</p>
+          <hr>
+          <button (click)="addToCart(product)" class="btn btn-primary">Add to cart</button>
+        </div>
+      </div>
+      <br>
+    </div>
+
+    
+    </div>
+</div>  
+
+
+<div class="container" *ngIf="flag">
+    <h2 class="text-danger">Sorry No Products Available for entered brand name</h2>
+</div>

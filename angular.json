@@ -68,7 +68,8 @@
             },
             "development": {
               "browserTarget": "Medicare_Angular_Forntend_Project:build:development"
-            }
+            },
+            "port":4201
           },
           "defaultConfiguration": "development"
         },
