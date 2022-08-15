@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CategoryServicesService {
   
-  private url="http://localhost:4201/api/users/category/getCat";
+  private url="http://18.209.43.115:4201/api/users/category/getCat";
   constructor(private http:HttpClient) { }
   //method for getting the all category details
   getAllCat(){
