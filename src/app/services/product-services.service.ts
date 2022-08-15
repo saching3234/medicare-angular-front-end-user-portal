@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductServicesService {
-  private url="http://localhost:4201/api/users/products/getCatProduct";
-  private url2="http://localhost:4201/api/users/products/getProductByBrandName"
+  private url="http://18.209.43.115:4201/api/users/products/getCatProduct";
+  private url2="http://18.209.43.115:4201/api/users/products/getProductByBrandName"
 
   constructor(private http:HttpClient) { }
 
