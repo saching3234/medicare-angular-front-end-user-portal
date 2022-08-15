@@ -1,7 +1,7 @@
 <div class="container my-5" >
  <div  *ngIf="carts">
 <div  *ngIf="carts.length==0" class="text-center">
-    <img src="http://localhost:4201/images/emptycart.png" alt="Fail to load image">
+    <img src="http://18.209.43.115:4201/images/emptycart.png" alt="Fail to load image">
 </div>
 </div>
 
@@ -9,7 +9,7 @@
 <div *ngFor="let cart of carts" class="card border-success" style="width: auto;">
     <div class="row no-gutters">
         <div class="col-sm-3">
-            <img class="card-img" style="height: auto; width:100% ;"  src="http://localhost:4201/{{cart.img_name}}" alt="Cart Image">
+            <img class="card-img" style="height: auto; width:100% ;"  src="http://18.209.43.115:4201/{{cart.img_name}}" alt="Cart Image">
         </div>
         <div class="col-sm-9 ">
             <div class="card-body mx-3">
